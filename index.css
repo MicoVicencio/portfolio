@@ -348,6 +348,8 @@ body:not(.user-is-tabbing) a:focus {
 .work__box {
     display: flex;
     align-items: center;
+    gap: 100px;
+    
 }
 
 
@@ -386,6 +388,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__image-box {
     margin-bottom: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+    
 }
 
 
