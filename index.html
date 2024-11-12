@@ -14,6 +14,8 @@
 
   <meta name="description" content="Add small description of yourslef.">
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -61,7 +63,7 @@
 
           <div class="about__photo-container">
             <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/mico.JPG" alt="" height="500px"/>
+            <img class="about__photo" src="./images/mico.JPG" alt="Mico Vicencio" />
           </div>
         </div>
       </div>
@@ -203,16 +205,52 @@
   <section class="contact" id="contact">
     <div class="row">
         <h2>Get in Touch</h2>
-        <div class="contact__info">
-            <p>
-                Hi there! I'm a student passionate about coding and creating unique projects, especially for fellow students. Whether you need help with a school project, are interested in learning more about coding, or just want to connect, feel free to reach out! 
-                I also make and sell delicious palitaw, so if you're in the mood for a treat, let me know! 😊 The best way to contact me is via email.
-            </p>
-            <!-- Replace the email with yours -->
-            <a href="mailto:micovicencio55@gmail.com" class="btn">micovicencio55@gmail.com</a>
+    </div>
+    <div class="content">
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <h3>Contact Us</h3>
+                <form id="contact-form" action="">
+                    <p>
+                        <label>Full Name</label>
+                        <input type="text" name="fullname" placeholder="Enter your full name" required>
+                    </p>
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="Optional: Enter your phone number">
+                    </p>
+                    <p>
+                        <label>Subject</label>
+                        <input type="text" name="subject" placeholder="Enter the subject">
+                    </p>
+                    <p class="block">
+                        <label>Message</label>
+                        <textarea name="message" rows="3" required placeholder="Write your message here"></textarea>
+                    </p>
+                    <p class="block">
+                        <button type="submit">Send</button>
+                    </p>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h4>More Info</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Mico Vicencio</li>
+                    <li><i class="fas fa-phone"></i> +639 999 809 0144</li>
+                    <li><i class="fas fa-envelope-open-text"></i> micovicencio55@gmail.com</li>
+                </ul>
+                <p>Hi there! I'm a student passionate about coding and creating unique projects, especially for fellow students. Whether you need help with a school project, are interested in learning more about coding, or just want to connect, feel free to reach out! The best way to contact me is through the form on the left.</p>
+                <p>https://github.com/MicoVicencio/portfolio.git</p>
+            </div>
         </div>
     </div>
 </section>
+
+
 
 
   <!-- ***** Footer ***** -->
@@ -255,7 +293,8 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
   </a>
-  <script src="./index.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>

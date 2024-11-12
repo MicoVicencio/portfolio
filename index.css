@@ -397,12 +397,28 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    gap: 200px;
+    gap: 50px;
+    height: 700px;
 }
 
 .about__photo-container {
     margin-bottom: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+    
+    
+
 }
+.about__text p {
+    font-size: 2.2rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Line spacing for better readability */
+    
+}
+.about__photo {
+    
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+
 
 .contact__info {
     max-width: 700px; /* Assuming var(--container-medium-width) is 700px */
@@ -449,7 +465,7 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     white-space: nowrap;
     gap: 20px;
-    animation: scrollRight 10s linear infinite;
+    animation: scrollRight 30s linear infinite;
 }
 
 .slide {
@@ -465,8 +481,13 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Animation for continuous scrolling */
 @keyframes scrollRight {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Adjust to match duplicated content */
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translate by the full width of the slider content */
+        transform: translateX(-2180px);
+    }
 }
 
 /* Modal styling */
