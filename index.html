@@ -13,8 +13,8 @@
   </title>
 
   <meta name="description" content="Add small description of yourslef.">
-  <link rel="stylesheet" href="index.css" />
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/main.css" />
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 </head>
 
@@ -29,42 +29,45 @@
           <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
           <li class="nav__item"><a href="#work" class="nav__link">Projects</a></li>
           <li class="nav__item"><a href="#certs" class="nav__link">Certificates</a></li>
-          
           <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
-    <div class="header__text-box row">
-      <div class="header__text">
-        <h1 class="heading-primary">
-          <!-- Replace the following name with your name -->
-          <span>Mico Vicencio</span>
-        </h1>
-        <!-- Put a small paragraph about yourself -->
-        <p>A student and entrepreneur from the Philippines.</p>
-        <a href="#contact" class="btn btn--pink">Get in touch</a>
-      </div>
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="images/vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <div class="header__text">
+      <h1 class="heading-primary">
+        <span>Mico Vicencio</span>
+      </h1>
+      <p>A student and entrepreneur from the Philippines.</p>
+      <a href="#contact" class="btn btn--pink">Get in touch</a>
     </div>
   </header>
+  
+  
 
   <main role="main">
     <section class="about" id="about">
       <div class="row">
         <h2>About Me</h2>
         <div class="about__content">
+          <div class="about__photo-container">
+            <!-- Add a nice photo of yourself -->
+            <img class="about__photo" src="./images/mico.JPG" alt="Mico Vicencio" />
+          </div>
           <div class="about__text">
             <!-- Replace the below paragraph with info about yourself -->
             <p>
               Computer Science student, freelance developer, and entrepreneur with a passion for innovative solutions and a knack for problem-solving. Experienced in designing and building custom software, educational systems, and interactive applications. Alongside my tech expertise, I run a small business where I combine creativity with customer-centric service. Committed to continuous learning and driven to make a meaningful impact through technology and entrepreneurship.
             </p>
             <!-- Provide a link to your resume -->
-            <a href="#" class="btn">My Resume</a>
+            <a href="https://drive.google.com/file/d/1MP2tVWRKffXR26QgrrWEMLYKJ048l-Ro/view?usp=drive_link" target="_blanks" class="btn">My Resume</a>
           </div>
 
-          <div class="about__photo-container">
-            <!-- Add a nice photo of yourself -->
-            <img class="about__photo" src="./images/mico.JPG" alt="Mico Vicencio" />
-          </div>
+          
         </div>
       </div>
     </section>
@@ -132,6 +135,61 @@
 
           <div class="work__box">
             <div class="work__text">
+              <h3>Smart Electricity Control System</h3>
+              <p>
+                Smart Electricity Control System uses RFID technology and mobile devices to efficiently manage and optimize electricity usage in computer labs.
+              </p>
+              <ul class="work__list">
+                <li>Python</li>
+                <li>MySql</li>
+                <li>C++</li>
+                <li>Blynk IoT</li>
+                
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/MicoVicencio/THESIS.git" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/MicoVicencio/THESIS.git" target="_blank">
+                  <img src="images/github.png" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-5.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Tribute Page</h3>
+              <p>
+                A heartfelt tribute to Ninong Ry, whose passion for Filipino cuisine and inspiring storytelling bring warmth, flavor, and connection to countless kitchens.
+              </p>
+              <ul class="work__list">
+                <li>Html</li>
+                <li>Css</li>
+                
+                
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/MicoVicencio/ninongry.git" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/MicoVicencio/ninongry.git" target="_blank">
+                  <img src="images/github.png" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-4.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
               <h3>K A T C H I</h3>
               <p>
                 KATCHI is a voice-activated Python and Arduino-powered karaoke system, allowing users to play any song hands-free for an engaging music experience.
@@ -160,38 +218,34 @@
       </div>
     </section>
 
-    <!-- ***** Clients ***** -->
-
-    <section class="certs" id="certs">
-      <div class="slider row" >
-        <h2>My Certificates</h2>
-        <div class="slider-row">
-          <!-- Row with 10 placeholder images, duplicated for seamless scroll -->
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 1"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 2"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 3"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 4"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 5"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 6"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 7"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 8"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 9"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 10"></div>
-          <!-- Duplicate images for seamless scrolling -->
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 1"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 2"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 3"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 4"></div>
-          <div class="slide"><img src="images/project-3.png" alt="Certificate 5"></div>
-        </div>
-      </div>
-    </section>
     
-    <!-- Modal for displaying full-size image -->
-    <div id="imageModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="fullImage">
+  
+    <section class="certs" id="certs">
+      <div class="row">
+    <div class="certs-grid">
+        <h2>My Certificates</h2>
+        <div class="grid-row">
+            <!-- Certificate images in grid layout -->
+            <div class="grid-item"><img src="images/cert1.jpg" alt="Certificate 1"></div>
+            <div class="grid-item"><img src="images/cert2.jpg" alt="Certificate 2"></div>
+            <div class="grid-item"><img src="images/cert3.jpg" alt="Certificate 3"></div>
+            <div class="grid-item"><img src="images/cert4.jpg" alt="Certificate 4"></div>
+            <div class="grid-item"><img src="images/cert5.jpg" alt="Certificate 5"></div>
+            <div class="grid-item"><img src="images/cert6.jpg" alt="Certificate 6"></div>
+            <div class="grid-item"><img src="images/cert7.jpg" alt="Certificate 7"></div>
+            <div class="grid-item"><img src="images/cert8.jpg" alt="Certificate 8"></div>
+            <div class="grid-item"><img src="images/cert9.jpg" alt="Certificate 9"></div>
+        </div>
     </div>
+</section>
+
+<!-- Modal for displaying full-size image -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+</div>
+</div>
+
     
     
 
@@ -232,8 +286,10 @@
                         <textarea name="message" rows="3" required placeholder="Write your message here"></textarea>
                     </p>
                     <p class="block">
-                        <button type="submit">Send</button>
+                        <button type="submit" id="submit-button">Send</button>
                     </p>
+                    <!-- Submission status message -->
+                    <p id="submission-status"></p>
                 </form>
             </div>
             <div class="contact-info">
@@ -249,6 +305,7 @@
         </div>
     </div>
 </section>
+
 
 
 

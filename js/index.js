@@ -17,58 +17,40 @@ window.addEventListener('keydown', handleFirstTab);
 
 // Back-to-top button visibility control
 const backToTopButton = document.querySelector(".back-to-top");
-let isBackToTopRendered = false;
 
-let alterStyles = (isBackToTopRendered) => {
-  backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
-  backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
-  backToTopButton.style.transform = isBackToTopRendered ? "scale(1)" : "scale(0)";
+const alterStyles = (visible) => {
+  backToTopButton.style.visibility = visible ? "visible" : "hidden";
+  backToTopButton.style.opacity = visible ? 1 : 0;
+  backToTopButton.style.transform = visible ? "scale(1)" : "scale(0)";
 };
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 700) {
-    isBackToTopRendered = true;
-    alterStyles(isBackToTopRendered);
-  } else {
-    isBackToTopRendered = false;
-    alterStyles(isBackToTopRendered);
-  }
+  const isBackToTopVisible = window.scrollY > 700;
+  alterStyles(isBackToTopVisible);
 });
 
-const sliderRows = document.querySelectorAll('.slider-row');
+
+// Modal Image Display
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('fullImage');
 const closeModal = document.querySelector('.close');
 
-// Duplicate each image to make the slider seamless
-sliderRows.forEach(row => {
-  const slides = Array.from(row.children);
-  slides.forEach(slide => row.appendChild(slide.cloneNode(true)));
-});
-
-// Pause scrolling on hover
-sliderRows.forEach(row => {
-  row.addEventListener('mouseover', () => row.style.animationPlayState = 'paused');
-  row.addEventListener('mouseout', () => row.style.animationPlayState = 'running');
-});
-
-// Open modal on image click
-document.querySelectorAll('.slide img').forEach(img => {
+// Open modal on image click for both slider and grid images
+document.querySelectorAll('.slider-row .slide img, .grid-item img').forEach(img => {
   img.addEventListener('click', (e) => {
     modal.style.display = 'block';
-    modalImg.src = e.target.src; // Set the modal image source to the clicked image source
+    modalImg.src = e.target.src;
   });
 });
 
-// Close modal when clicking on "x"
+// Close modal on "x" click
 closeModal.onclick = () => {
   modal.style.display = 'none';
 };
 
 // Close modal when clicking outside the image
-window.onclick = (e) => {
+window.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
   }
-};
-
+});

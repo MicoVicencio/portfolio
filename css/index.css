@@ -1,0 +1,560 @@
+/* --------------------------------------- */
+/* ----- Basic Setup ----- */
+/* --------------------------------------- */
+
+@font-face {
+    font-family: 'Hk Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/HKGrotesk-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Jost-Regular.ttf') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@media(max-width: 1000px) {
+    html {
+        font-size: 52%;
+    }
+}
+#submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Spinner centered in the button */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff3258;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-right: 8px; /* Space between spinner and "Sending..." text */
+}
+
+/* CSS animation for the spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Single-line status message */
+#submission-status {
+    text-align: center;
+    font-size: 1em;
+    color: #ff3258;
+    margin-top: 10px;
+    white-space: nowrap; /* Ensures the text stays on one line */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds an ellipsis if text overflows */
+}
+
+body {
+    font-size: 1.8rem; /* Adjust to your preferred size */
+    font-family: 'Hk Grotesk', sans-serif; /* Adjust to your preferred font */
+    font-weight: 400;
+    color: #e5e5e6da; /* Replace with your preferred color */
+    line-height: 1.7; /* Adjust to your preferred line-height */
+    background-color: #000; /* Replace with your preferred background color */
+    overflow-x: hidden;
+}
+
+.row {
+    max-width: 1180px; /* Replace with your desired max-width */
+    margin: 0 auto;
+}
+
+section {
+    padding: 12rem 0; /* Replace with your desired padding */
+    border-bottom: 1px solid rgb(36, 35, 35); /* Light border */
+}
+
+img {
+    object-fit: contain; /* Keeps the aspect ratio of the image */
+    max-width: 100%; /* Ensures the image doesn't exceed the container width */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+/* --------------------------------------- */
+/* ----- Headlines and Paragraphs ----- */
+/* --------------------------------------- */
+
+h1,
+h2,
+h3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    line-height: 1.2; /* Replace with your desired line-height */
+    color: #f0e9f2; /* Replace with your desired color */
+}
+
+.heading-primary {
+    line-height: 1;
+    font-size: 7.5rem; /* Huge font size */
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 5.5rem; /* Large font size */
+    margin-bottom: 6rem; /* Medium gutter */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 10rem;
+    background: #ff3258; /* Pink color */
+    margin: 2rem 0; /* Small gutter */
+}
+
+h3 {
+    font-size: 3.6rem; /* Medium-1 font size */
+    margin-bottom: 2rem; /* Small gutter */
+}
+
+
+
+a {
+    color: #f0e9f2; /* Replace with your desired color */
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.2s;
+    outline: 2px solid transparent;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid #ff3258; /* Pink color */
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) a:focus {
+    outline: none;
+}
+
+.link:hover {
+    color: #ff3258; /* Pink color */
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4.2rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ff3258; /* Pink color */
+    font-weight: 400;
+}
+
+
+.btn:focus {
+    outline: none;
+}
+
+.btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    background: #f0e9f2; /* White color */
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.btn:hover::after,
+.btn:focus::after {
+    right: 0;
+    background: #ff3258; /* Pink color */
+}
+
+.btn--pink {
+    background: #ff3258; /* Pink color */
+    transition: all 0.2s;
+}
+
+.btn--pink::after {
+    display: none;
+}
+
+.btn--pink:hover,
+.btn--pink:focus {
+    background: transparent;
+}
+
+
+.link__text {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #ff3258; /* Pink color */
+}
+
+.link__text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    background: #f0e9f2; /* White color */
+    height: 100%;
+    z-index: -1;
+    transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+}
+
+.link__text:focus {
+    outline: none;
+}
+
+.link__text:hover::after,
+.link__text:focus::after {
+    right: 0;
+    background: #ff3258; /* Pink color */
+}
+
+.link__text span {
+    padding-left: 1rem;
+    font-family: sans-serif; /* Keeping as is */
+}
+
+
+/* ----- Back to Top ----- */
+
+.back-to-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: #ff3258; /* Pink color */
+    border-radius: 50%;
+    z-index: 10;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+.back-to-top__image {
+    height: 70%;
+}
+
+
+
+
+
+
+/* --------------------------------------- */
+/* ----- Header ----- */
+/* --------------------------------------- */
+
+.header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Aligns the children vertically */
+    justify-content: center;
+    align-items: center; /* Centers content horizontally */
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Keeps the video behind the content */
+  }
+  
+  .header__text {
+    position: relative;
+    z-index: 1; /* Ensures text is above the video */
+  }
+  
+  .header__text h1 {
+    font-size: 8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .header__text p {
+    font-family: 'Jost', sans-serif;
+    font-size: 2.8rem;
+    margin: 1.5rem 0 3.5rem;
+    max-width: 700px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: flex-end; /* Positions the nav items to the right */
+    position: absolute;
+    top: 3rem; /* Moves the nav down slightly from the top */
+    right: 3rem; /* Aligns the nav to the right */
+    width: auto;
+    z-index: 2; /* Ensures nav is above the video */
+  }
+  
+  .nav__items {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 30px;
+    margin-right: 300px;
+    font-size: 25px;
+  }
+  
+  .nav__item:not(:last-child) {
+    margin-left: 2rem; /* Adjusted margin to space items evenly */
+  }
+  
+  .nav__link {
+    display: inline-block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    display: inline-block;
+    height: 2px;
+    background: #f0e9f2; /* White underline */
+    transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
+  }
+  
+  .nav__link:hover {
+    color: #ff3258; /* Pink color */
+  }
+  
+  .nav__link:hover::after {
+    right: 0;
+    height: 2px;
+    background: #ff3258; /* Pink color underline */
+  }
+  
+  
+
+
+.work__box {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    
+}
+
+
+
+.work__box:not(:last-child) {
+    margin-bottom: 25rem;
+}
+
+
+
+.work__links {
+    display: flex;
+    align-items: center;
+}
+
+.work__text {
+    flex: 0 0 30%;
+}
+
+.work__list {
+    list-style-type: square; 
+    list-style-position: inside;
+    margin-bottom: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+}
+
+.work__code {
+    display: block;
+    height: 3rem;
+    margin-left: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+    transition: all 0.3s;
+}
+
+.work__code:hover {
+    transform: scale(1.2);
+}
+
+.work__image-box {
+    margin-bottom: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+    
+}
+
+
+
+.about__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 50px;
+    align-items: center; /* Centers items vertically within their grid cell */
+    justify-content: center; /* Centers the grid within the container */
+    height: 700px;
+    text-align: center; /* Center-align text in each cell */
+}
+
+
+.about__photo-container {
+    margin-bottom: 3rem; /* Assuming var(--gutter-normal) is 3rem */
+    
+    
+
+}
+.about__text p {
+    font-size: 2.5rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Line spacing for better readability */
+    
+}
+.about__photo {
+    
+    height:600px; /* Maintain aspect ratio */
+    border-radius: 20px; /* Optional rounded corners */
+}
+
+
+
+.contact__info {
+    max-width: 700px; /* Assuming var(--container-medium-width) is 700px */
+}
+
+
+.footer {
+    text-align: center;
+    padding: 6rem 0 3rem; /* Assuming var(--gutter-medium) is 6rem and var(--gutter-normal) is 3rem */
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0; /* Assuming var(--gutter-normal) is 3rem */
+    list-style: none;
+}
+
+.footer__social-link-item:not(:last-of-type) {
+    margin-right: 2rem; /* Assuming var(--gutter-small) is 2rem */
+}
+
+.footer__social-image {
+    height: 4rem;
+}
+
+.footer__github-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__github-buttons iframe {
+    height: 2.5rem;
+    width: 84px;
+    transform: translateY(3px);
+}
+
+/* Grid container for certificates */
+.certs-grid {
+    text-align: center;
+    width: 1200px; /* Increased width to fit 5 items in a row */
+}
+.certs h2{
+    
+    margin-right: 830px;
+    
+}
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Set to 5 columns */
+    gap: 20px;
+    justify-items: center;
+    
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    max-width: 780px; /* Adjust max-width to fit within each column */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.grid-item img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Make sure modal appears above other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+    animation: zoomIn 0.3s;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+}
