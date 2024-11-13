@@ -273,15 +273,15 @@ body:not(.user-is-tabbing) a:focus {
     position: relative;
     height: 100vh;
     display: flex;
-    flex-direction: column; /* Aligns the children vertically */
+    flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centers content horizontally */
+    align-items: center;
     color: white;
     text-align: center;
     overflow: hidden;
-  }
-  
-  .background-video {
+}
+
+.background-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -289,60 +289,56 @@ body:not(.user-is-tabbing) a:focus {
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Keeps the video behind the content */
-  }
-  
-  .header__text {
-    position: relative;
-    z-index: 1; /* Ensures text is above the video */
-  }
-  
-  .header__text h1 {
-    font-size: 8rem;
+    z-index: -1;
+}
+.header__text h1.heading-primary {
+    font-size: 100px; /* Adjust this size for desktop view */
     margin-bottom: 1rem;
-  }
-  
-  .header__text p {
-    font-family: 'Jost', sans-serif;
-    font-size: 2.8rem;
-    margin: 1.5rem 0 3.5rem;
+}
+
+.header__text h1.heading-primary span {
+    font-size: inherit; /* Keep the same font size as the h1 */
+}
+
+.header__text p {
+    font-size: 30px; /* Adjust this for desktop view */
     max-width: 700px;
-  }
-  
-  .nav {
+    margin: 1.5rem 0 3.5rem;
+}
+
+
+
+/* Centered navigation at the top */
+.nav {
     display: flex;
-    justify-content: flex-end; /* Positions the nav items to the right */
+    justify-content: center;
     position: absolute;
-    top: 3rem; /* Moves the nav down slightly from the top */
-    right: 3rem; /* Aligns the nav to the right */
-    width: auto;
-    z-index: 2; /* Ensures nav is above the video */
-  }
-  
-  .nav__items {
+    top: 20px; /* Adjust this value to control distance from the top */
+    left: 50%;
+    
+    transform: translateX(-50%); /* Centers the nav horizontally */
+    z-index: 2;
+}
+
+.nav__items {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 30px;
-    margin-right: 300px;
-    font-size: 25px;
-  }
-  
-  .nav__item:not(:last-child) {
-    margin-left: 2rem; /* Adjusted margin to space items evenly */
-  }
-  
-  .nav__link {
+    gap: 80px;
+    font-size: 30px;
+}
+
+.nav__link {
     display: inline-block;
     padding: 1rem 0;
     text-decoration: none;
     color: white;
     transition: all 0.3s ease;
     position: relative;
-  }
-  
-  .nav__link::after {
+}
+
+.nav__link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -350,19 +346,48 @@ body:not(.user-is-tabbing) a:focus {
     right: 100%;
     display: inline-block;
     height: 2px;
-    background: #f0e9f2; /* White underline */
+    background: #f0e9f2;
     transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
-  }
-  
-  .nav__link:hover {
-    color: #ff3258; /* Pink color */
-  }
-  
-  .nav__link:hover::after {
+}
+
+.nav__link:hover {
+    color: #ff3258;
+}
+
+.nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: #ff3258; /* Pink color underline */
-  }
+    background: #ff3258;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .nav__items {
+        gap: 20px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav__items {
+        gap: 15px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        top: 10px; /* Adjust top position for smaller screens */
+    }
+
+    .nav__items {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 18px;
+    }
+}
+
   
   
 
