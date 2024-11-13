@@ -85,13 +85,22 @@ body {
     cursor: pointer;
 }
 
-/* Content area styles */
+/* Default styles for larger screens */
 .content {
     width: 1180px;
-    margin-left: 360px;
+    
     margin-top: 100px;
-    font-family: 'Hk Grotesk', sans-serif; /* Apply Hk Grotesk here */
+    font-family: 'Hk Grotesk', sans-serif;
 }
+
+/* Medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+    .content {
+        width: 90%; /* Use a percentage to make it more flexible */
+        margin-left: 5%; /* Center content with flexible margin */
+        margin-top: 80px;
+    }
+}s
 
 /* Contact info styles */
 .contact-info {
