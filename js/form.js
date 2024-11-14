@@ -31,3 +31,12 @@ document.getElementById("contact-form").addEventListener("submit", function(even
             submitButton.innerHTML = 'Send'; // Reset button text
         });
 });
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.nav');
+    if (window.scrollY > 50) { // Adjust scroll value as needed
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+
